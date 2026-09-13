@@ -1,0 +1,1671 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Yarn Loop Collective | Cozy Digital PDF Crochet Patterns</title>
+    
+    <!-- SEO & Pinterest Meta Tags -->
+    <meta name="description" content="Discover cozy, creative crochet PDF patterns designed for makers. Instant digital download, step-by-step guides, and beginner-friendly tutorials. Perfect for Pinterest makers!">
+    <meta property="og:title" content="The Yarn Loop Collective - Cozy Digital Crochet Patterns">
+    <meta property="og:description" content="Instant PDF downloads for cozy crochet bags, amigurumi, home decor, and fashion patterns. Crafted with love for makers.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="The Yarn Loop Collective">
+    <meta name="pinterest-rich-pin" content="true">
+
+    <!-- Fonts: Playfair Display for elegant headings, Inter for clean legible body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: {
+                            DEFAULT: '#FAF8F5',
+                            dark: '#F3EDE4',
+                            light: '#FFFDFB'
+                        },
+                        beige: {
+                            DEFAULT: '#EFE7DA',
+                            dark: '#DFD4C1'
+                        },
+                        brown: {
+                            light: '#A68B75',
+                            DEFAULT: '#7C6049',
+                            dark: '#4D3A2A'
+                        },
+                        terracotta: {
+                            light: '#DE9173',
+                            DEFAULT: '#C87D55',
+                            dark: '#A65A34'
+                        },
+                        sage: {
+                            light: '#C4D1C2',
+                            DEFAULT: '#8A9A86',
+                            dark: '#61725D'
+                        },
+                        yarnText: '#332A24'
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+                        sans: ['"Inter"', 'sans-serif']
+                    },
+                    borderRadius: {
+                        '3xl': '1.75rem',
+                        '4xl': '2.25rem'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #FAF8F5;
+            color: #332A24;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        /* Tactile subtle yarn texture background */
+        .yarn-texture-bg {
+            background-color: #FAF8F5;
+            background-image: radial-gradient(#EFE7DA 1.5px, transparent 1.5px), radial-gradient(#EFE7DA 1.5px, #FAF8F5 1.5px);
+            background-size: 50px 50px;
+            background-position: 0 0, 25px 25px;
+        }
+
+        .cozy-shadow {
+            box-shadow: 0 10px 30px -5px rgba(124, 96, 73, 0.07), 0 4px 12px -2px rgba(124, 96, 73, 0.03);
+        }
+
+        .cozy-shadow-lg {
+            box-shadow: 0 20px 45px -10px rgba(124, 96, 73, 0.12), 0 8px 20px -4px rgba(124, 96, 73, 0.05);
+        }
+
+        /* Hide scrollbars for filter sliders */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .toast-enter { transform: translateY(100%); opacity: 0; }
+        .toast-show { transform: translateY(0); opacity: 1; }
+
+        /* Smooth thumbnail border transition */
+        .thumb-active {
+            border-color: #C87D55 !important;
+            box-shadow: 0 0 0 2px #C87D55;
+            opacity: 1 !important;
+        }
+    </style>
+
+    <!-- Schema.org Structured Data for Google & Pinterest -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Store",
+      "name": "The Yarn Loop Collective",
+      "description": "Digital PDF Crochet Patterns & Step-by-Step Tutorials for Makers",
+      "url": "https://theyarnloopcollective.com",
+      "currenciesAccepted": "USD"
+    }
+    </script>
+</head>
+<body class="yarn-texture-bg flex flex-col min-h-screen">
+
+    <!-- ANNOUNCEMENT BAR -->
+    <div class="bg-terracotta text-white text-xs sm:text-sm py-2 px-4 text-center font-medium tracking-wide flex justify-center items-center gap-2">
+        <i class="fa-solid fa-cloud-arrow-down text-cream opacity-90"></i>
+        <span>Instant PDF Download • Beginner-Friendly Step-by-Step Guides • 100% Digital Delivery</span>
+    </div>
+
+    <!-- MAIN SITE HEADER -->
+    <header class="sticky top-0 z-40 bg-cream/95 backdrop-blur-md border-b border-beige/80 transition-all duration-300" id="mainHeader">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Brand Logo -->
+            <a href="#" onclick="navigateTo('home'); return false;" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-beige-dark/40 flex items-center justify-center border border-brown/20 group-hover:bg-terracotta group-hover:border-terracotta transition-all duration-300">
+                    <svg class="w-6 h-6 text-terracotta group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z"/>
+                        <path d="M8 12c0-2.21 1.79-4 4-4s4 1.79 4 4-1.79 4-4 4"/>
+                        <path d="M12 16c-2.21 0-4 1.79-4 4"/>
+                    </svg>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif text-xl sm:text-2xl font-bold tracking-tight text-yarnText group-hover:text-terracotta transition-colors">The Yarn Loop</span>
+                    <span class="text-[10px] tracking-[0.2em] uppercase font-semibold text-brown opacity-80 -mt-1">Collective</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-sm text-yarnText">
+                <a href="#" onclick="navigateTo('home'); return false;" class="nav-link hover:text-terracotta transition-colors py-1 border-b-2 border-transparent" id="nav-home">Home</a>
+                <a href="#" onclick="navigateTo('shop'); return false;" class="nav-link hover:text-terracotta transition-colors py-1 border-b-2 border-transparent" id="nav-shop">Shop Patterns</a>
+                <a href="#" onclick="navigateTo('about'); return false;" class="nav-link hover:text-terracotta transition-colors py-1 border-b-2 border-transparent" id="nav-about">About Brand</a>
+                <a href="#" onclick="navigateTo('contact'); return false;" class="nav-link hover:text-terracotta transition-colors py-1 border-b-2 border-transparent" id="nav-contact">Contact</a>
+            </nav>
+
+            <!-- Actions & Search/Cart -->
+            <div class="flex items-center space-x-3 sm:space-x-4">
+                <button onclick="navigateTo('shop'); focusSearch();" class="p-2.5 text-yarnText hover:text-terracotta hover:bg-beige/50 rounded-full transition-all" title="Search Patterns">
+                    <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                </button>
+                
+                <button onclick="toggleCartDrawer(true)" class="p-2.5 text-yarnText hover:text-terracotta hover:bg-beige/50 rounded-full transition-all relative" title="Saved Patterns">
+                    <i class="fa-solid fa-heart text-lg"></i>
+                    <span id="cartBadge" class="absolute top-1 right-1 bg-terracotta text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center scale-0 transition-transform">0</span>
+                </button>
+
+                <!-- Mobile menu toggle button -->
+                <button onclick="toggleMobileMenu()" class="md:hidden p-2 text-yarnText hover:text-terracotta rounded-lg focus:outline-none" aria-label="Toggle Navigation Menu">
+                    <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobileMenu" class="hidden md:hidden bg-cream border-b border-beige px-6 py-6 space-y-4 shadow-xl">
+            <a href="#" onclick="navigateTo('home'); toggleMobileMenu(); return false;" class="block py-2 text-base font-semibold text-yarnText hover:text-terracotta border-b border-beige/40">Home</a>
+            <a href="#" onclick="navigateTo('shop'); toggleMobileMenu(); return false;" class="block py-2 text-base font-semibold text-yarnText hover:text-terracotta border-b border-beige/40">Shop All Patterns</a>
+            <a href="#" onclick="navigateTo('about'); toggleMobileMenu(); return false;" class="block py-2 text-base font-semibold text-yarnText hover:text-terracotta border-b border-beige/40">About Brand</a>
+            <a href="#" onclick="navigateTo('contact'); toggleMobileMenu(); return false;" class="block py-2 text-base font-semibold text-yarnText hover:text-terracotta">Contact Support</a>
+            
+            <div class="pt-4 flex items-center justify-between border-t border-beige">
+                <span class="text-xs text-brown">Follow us on Pinterest:</span>
+                <!-- REPLACE THIS PINTEREST URL WITH YOUR OWN BRAND LINK -->
+                <a href="https://pinterest.com" target="_blank" class="text-terracotta hover:text-terracotta-dark font-medium text-xs flex items-center gap-1">
+                    <i class="fa-brands fa-pinterest"></i> Pinterest
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT VIEW WRAPPER -->
+    <main class="flex-grow">
+
+        <!-- ========================================== -->
+        <!-- VIEW 1: HOME PAGE PAGE -->
+        <!-- ========================================== -->
+        <section id="view-home" class="page-view">
+            <!-- HERO SECTION -->
+            <div class="relative overflow-hidden pt-8 pb-16 lg:pt-16 lg:pb-24">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        
+                        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sage/20 border border-sage/40 text-sage-dark text-xs sm:text-sm font-medium">
+                                <i class="fa-solid fa-sparkles text-terracotta"></i>
+                                <span>Cozy Digital PDF Crochet Patterns</span>
+                            </div>
+                            
+                            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-yarnText leading-[1.15]">
+                                Beautiful Crochet Patterns, <span class="text-terracotta italic font-normal">Made for You</span>
+                            </h1>
+                            
+                            <p class="text-base sm:text-lg text-brown max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                                Discover cozy, creative digital PDF crochet patterns designed to make your next project something special. Easy step-by-step guides, detailed stitch photos, and instant digital access.
+                            </p>
+                            
+                            <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                                <button onclick="navigateTo('shop')" class="w-full sm:w-auto px-8 py-4 bg-terracotta hover:bg-terracotta-dark text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-center gap-3">
+                                    <span>Shop Crochet Patterns</span>
+                                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                                </button>
+                                
+                                <button onclick="scrollToCategory()" class="w-full sm:w-auto px-8 py-4 bg-cream-dark hover:bg-beige text-yarnText font-semibold rounded-2xl border border-beige-dark/60 transition-all duration-300 flex items-center justify-center gap-2">
+                                    <span>Explore Collection</span>
+                                </button>
+                            </div>
+
+                            <!-- Trust Highlights -->
+                            <div class="pt-6 grid grid-cols-3 gap-4 border-t border-beige/80 max-w-md mx-auto lg:mx-0 text-left">
+                                <div>
+                                    <span class="block font-bold text-yarnText text-lg font-serif">100%</span>
+                                    <span class="text-xs text-brown">Instant PDF Access</span>
+                                </div>
+                                <div>
+                                    <span class="block font-bold text-yarnText text-lg font-serif">Detailed</span>
+                                    <span class="text-xs text-brown">Step-by-Step Photos</span>
+                                </div>
+                                <div>
+                                    <span class="block font-bold text-yarnText text-lg font-serif">Beginner</span>
+                                    <span class="text-xs text-brown">Friendly Guides</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hero Graphic Feature -->
+                        <div class="lg:col-span-5 relative">
+                            <div class="relative mx-auto max-w-md lg:max-w-none">
+                                <div class="absolute -top-4 -left-4 w-72 h-72 bg-sage/20 rounded-full blur-3xl -z-10"></div>
+                                <div class="absolute -bottom-6 -right-6 w-72 h-72 bg-terracotta/15 rounded-full blur-3xl -z-10"></div>
+                                
+                                <div class="bg-cream-light p-4 rounded-3xl border border-beige cozy-shadow-lg relative group">
+                                    <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-beige/40 cursor-pointer relative" onclick="navigateTo('product', 1)">
+                                        <img id="heroImageElement" src="images/daisy-boho-tote-main.jpg" alt="Handmade crochet daisy tote bag pattern" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                        <div class="absolute top-4 right-4 bg-cream/95 backdrop-blur-md px-3.5 py-1.5 rounded-full text-xs font-bold text-terracotta border border-beige shadow-sm flex items-center gap-1.5">
+                                            <i class="fa-solid fa-file-pdf"></i> Instant Download
+                                        </div>
+                                        <div class="absolute bottom-4 left-4 right-4 bg-cream/90 backdrop-blur-md p-3 rounded-xl border border-beige/80 text-left flex items-center justify-between">
+                                            <div>
+                                                <p class="text-[10px] uppercase tracking-wider text-brown font-semibold">Featured Pattern</p>
+                                                <p class="text-sm font-serif font-bold text-yarnText">Daisy Boho Tote Bag</p>
+                                            </div>
+                                            <span class="text-terracotta font-serif font-bold text-base">$5.99</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- FEATURED PRODUCTS GRID -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+                    <div>
+                        <span class="text-terracotta text-sm font-semibold tracking-wider uppercase">Handcrafted Favorites</span>
+                        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-yarnText mt-1">Popular Crochet Patterns</h2>
+                    </div>
+                    <a href="#" onclick="navigateTo('shop'); return false;" class="mt-4 md:mt-0 text-brown hover:text-terracotta font-semibold text-sm flex items-center gap-2 group transition-colors">
+                        <span>View All Patterns</span>
+                        <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Dynamic product container filled via JS -->
+                <div id="featuredProductsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                    <!-- Products dynamically rendered here -->
+                </div>
+            </div>
+
+            <!-- SHOP BY CATEGORY SECTION -->
+            <div id="categories-section" class="bg-beige/40 py-20 border-y border-beige-dark/40">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-2xl mx-auto mb-12">
+                        <span class="text-terracotta text-sm font-semibold tracking-wider uppercase">Find Your Next Project</span>
+                        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-yarnText mt-1">Shop by Category</h2>
+                        <p class="text-brown text-sm sm:text-base mt-2">Whether you love cute plushies, stylish totes, or quick beginner home accents.</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- Category Card 1 -->
+                        <div onclick="filterByCategory('Bags')" class="group cursor-pointer bg-cream rounded-3xl p-4 border border-beige/80 cozy-shadow hover:cozy-shadow-lg transition-all text-center">
+                            <div class="aspect-square rounded-2xl overflow-hidden mb-4 relative bg-beige/40">
+                                <img id="catImgBags" src="images/daisy-boho-tote-main.jpg" alt="Crochet Bags category" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                <div class="absolute inset-0 bg-yarnText/20 group-hover:bg-yarnText/10 transition-colors"></div>
+                            </div>
+                            <h3 class="font-serif font-bold text-lg text-yarnText group-hover:text-terracotta transition-colors">Crochet Bags</h3>
+                            <p class="text-xs text-brown mt-0.5">Market totes & purses</p>
+                        </div>
+
+                        <!-- Category Card 2 -->
+                        <div onclick="filterByCategory('Amigurumi')" class="group cursor-pointer bg-cream rounded-3xl p-4 border border-beige/80 cozy-shadow hover:cozy-shadow-lg transition-all text-center">
+                            <div class="aspect-square rounded-2xl overflow-hidden mb-4 relative bg-beige/40">
+                                <img id="catImgAmigurumi" src="images/cozy-pumpkin-trio-main.jpg" alt="Crochet Amigurumi category" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                <div class="absolute inset-0 bg-yarnText/20 group-hover:bg-yarnText/10 transition-colors"></div>
+                            </div>
+                            <h3 class="font-serif font-bold text-lg text-yarnText group-hover:text-terracotta transition-colors">Amigurumi Plushies</h3>
+                            <p class="text-xs text-brown mt-0.5">Cute plush toys & pumpkins</p>
+                        </div>
+
+                        <!-- Category Card 3 -->
+                        <div onclick="filterByCategory('Clothing & Accessories')" class="group cursor-pointer bg-cream rounded-3xl p-4 border border-beige/80 cozy-shadow hover:cozy-shadow-lg transition-all text-center">
+                            <div class="aspect-square rounded-2xl overflow-hidden mb-4 relative bg-beige/40">
+                                <img id="catImgClothing" src="images/ribbed-beanie-main.jpg" alt="Crochet Clothing & Accessories category" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                <div class="absolute inset-0 bg-yarnText/20 group-hover:bg-yarnText/10 transition-colors"></div>
+                            </div>
+                            <h3 class="font-serif font-bold text-lg text-yarnText group-hover:text-terracotta transition-colors">Wearables</h3>
+                            <p class="text-xs text-brown mt-0.5">Beanies, cardigans & hats</p>
+                        </div>
+
+                        <!-- Category Card 4 -->
+                        <div onclick="filterByCategory('Home Decor')" class="group cursor-pointer bg-cream rounded-3xl p-4 border border-beige/80 cozy-shadow hover:cozy-shadow-lg transition-all text-center">
+                            <div class="aspect-square rounded-2xl overflow-hidden mb-4 relative bg-beige/40">
+                                <img id="catImgHome" src="images/floral-coasters-main.jpg" alt="Crochet Home Decor category" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                <div class="absolute inset-0 bg-yarnText/20 group-hover:bg-yarnText/10 transition-colors"></div>
+                            </div>
+                            <h3 class="font-serif font-bold text-lg text-yarnText group-hover:text-terracotta transition-colors">Home Decor</h3>
+                            <p class="text-xs text-brown mt-0.5">Coasters, plant hangers & decor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PINTEREST CROCHET INSPIRATION SECTION -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-terracotta text-sm font-semibold tracking-wider uppercase">Saved From Pinterest</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-yarnText mt-1">Crochet Inspiration & Ideas</h2>
+                    <p class="text-brown text-sm sm:text-base mt-2">Explore our maker-favorite projects designed for relaxing weekends.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Inspiration Card 1 -->
+                    <div class="bg-cream rounded-3xl overflow-hidden border border-beige cozy-shadow group">
+                        <div class="aspect-[4/3] bg-beige/40 overflow-hidden relative cursor-pointer" onclick="navigateTo('shop')">
+                            <img id="inspImg1" src="images/daisy-boho-tote-lifestyle.jpg" alt="Cozy crochet tote bag lifestyle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-4 left-4 bg-terracotta text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">Boho Vibe</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-serif font-bold text-xl text-yarnText mb-2">Weekend Daisy Tote Project</h3>
+                            <p class="text-xs text-brown leading-relaxed mb-4">A simple granny square flower pattern that turns into a stylish everyday market tote bag.</p>
+                            <button onclick="navigateTo('product', 1)" class="text-xs font-bold text-terracotta hover:text-terracotta-dark flex items-center gap-1.5">
+                                <span>Explore Daisy Tote Pattern</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Inspiration Card 2 -->
+                    <div class="bg-cream rounded-3xl overflow-hidden border border-beige cozy-shadow group">
+                        <div class="aspect-[4/3] bg-beige/40 overflow-hidden relative cursor-pointer" onclick="navigateTo('shop')">
+                            <img id="inspImg2" src="images/cozy-pumpkin-trio-lifestyle.jpg" alt="Autumn crochet pumpkins inspiration" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-4 left-4 bg-sage text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">Autumn Craft</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-serif font-bold text-xl text-yarnText mb-2">Cozy Autumn Home Styling</h3>
+                            <p class="text-xs text-brown leading-relaxed mb-4">Whip up cute plush velvet pumpkins to bring handmade cozy warmth to your living room or mantle.</p>
+                            <button onclick="navigateTo('product', 2)" class="text-xs font-bold text-terracotta hover:text-terracotta-dark flex items-center gap-1.5">
+                                <span>Explore Pumpkin Trio</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Inspiration Card 3 -->
+                    <div class="bg-cream rounded-3xl overflow-hidden border border-beige cozy-shadow group">
+                        <div class="aspect-[4/3] bg-beige/40 overflow-hidden relative cursor-pointer" onclick="navigateTo('shop')">
+                            <img id="inspImg3" src="images/floral-coasters-lifestyle.jpg" alt="Handmade crochet coasters" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-4 left-4 bg-brown text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">30-Min Make</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-serif font-bold text-xl text-yarnText mb-2">Quick Gift Idea: Floral Coasters</h3>
+                            <p class="text-xs text-brown leading-relaxed mb-4">Fast 30-minute flower square coasters. Perfect for yarn stash busting and housewarming gift sets!</p>
+                            <button onclick="navigateTo('product', 4)" class="text-xs font-bold text-terracotta hover:text-terracotta-dark flex items-center gap-1.5">
+                                <span>Explore Coaster Set</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEW TO CROCHET? START HERE SECTION -->
+            <div class="bg-beige/30 py-16 border-y border-beige">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="bg-cream rounded-3xl p-8 sm:p-12 border border-beige cozy-shadow relative overflow-hidden">
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                            <div class="lg:col-span-7 space-y-4">
+                                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-terracotta/10 text-terracotta text-xs font-bold uppercase">
+                                    <i class="fa-solid fa-seedling"></i> Beginner Friendly
+                                </div>
+                                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-yarnText">New to Crochet? Start Here</h2>
+                                <p class="text-brown text-sm sm:text-base leading-relaxed">
+                                    Never picked up a hook before? No problem! Our beginner-focused digital PDF patterns feature high-resolution stitch photos, video tutorial links, and step-by-step row instructions tailored for first-time makers.
+                                </p>
+                                <div class="pt-2">
+                                    <button onclick="filterByDifficulty('Beginner')" class="px-6 py-3.5 bg-terracotta hover:bg-terracotta-dark text-white rounded-xl text-xs font-bold transition-all shadow-md inline-flex items-center gap-2">
+                                        <span>Show All Beginner Patterns</span>
+                                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="lg:col-span-5 flex justify-center">
+                                <div class="grid grid-cols-2 gap-4 w-full max-w-sm">
+                                    <div class="bg-beige/40 p-4 rounded-2xl text-center border border-beige-dark/30">
+                                        <i class="fa-solid fa-book-open text-2xl text-terracotta mb-2 block"></i>
+                                        <span class="font-serif font-bold text-sm text-yarnText block">Row by Row</span>
+                                        <span class="text-[11px] text-brown">No abbreviations confusion</span>
+                                    </div>
+                                    <div class="bg-beige/40 p-4 rounded-2xl text-center border border-beige-dark/30">
+                                        <i class="fa-solid fa-circle-play text-2xl text-sage-dark mb-2 block"></i>
+                                        <span class="font-serif font-bold text-sm text-yarnText block">Video Links</span>
+                                        <span class="text-[11px] text-brown">Stitch visual guides</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WHY CHOOSE US -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <span class="text-terracotta text-sm font-semibold tracking-wider uppercase">Crafted With Care</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-yarnText mt-1">Why Makers Love Our Patterns</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-cream rounded-3xl p-6 border border-beige/80 cozy-shadow">
+                        <div class="w-12 h-12 rounded-2xl bg-terracotta/10 text-terracotta flex items-center justify-center text-xl font-bold mb-5">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl text-yarnText mb-2">Instant Digital Access</h3>
+                        <p class="text-brown text-sm leading-relaxed">No waiting for physical delivery. Download your PDF file immediately after purchase.</p>
+                    </div>
+
+                    <div class="bg-cream rounded-3xl p-6 border border-beige/80 cozy-shadow">
+                        <div class="w-12 h-12 rounded-2xl bg-sage/20 text-sage-dark flex items-center justify-center text-xl font-bold mb-5">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl text-yarnText mb-2">Beginner Friendly</h3>
+                        <p class="text-brown text-sm leading-relaxed">Clear step-by-step photos, stitch guides, video links, and exact yarn gauge recommendations.</p>
+                    </div>
+
+                    <div class="bg-cream rounded-3xl p-6 border border-beige/80 cozy-shadow">
+                        <div class="w-12 h-12 rounded-2xl bg-brown/10 text-brown flex items-center justify-center text-xl font-bold mb-5">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl text-yarnText mb-2">Original & Cozy</h3>
+                        <p class="text-brown text-sm leading-relaxed">Unique boho, modern, and cute designs created for aesthetic maker projects.</p>
+                    </div>
+
+                    <div class="bg-cream rounded-3xl p-6 border border-beige/80 cozy-shadow">
+                        <div class="w-12 h-12 rounded-2xl bg-terracotta/10 text-terracotta flex items-center justify-center text-xl font-bold mb-5">
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl text-yarnText mb-2">Tablet & Printable</h3>
+                        <p class="text-brown text-sm leading-relaxed">Read smoothly on your iPad, phone, or print standard clean US Letter / A4 pages at home.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PINTEREST CTA BANNER -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+                <div class="bg-gradient-to-r from-terracotta to-terracotta-dark rounded-3xl p-8 sm:p-12 text-white relative overflow-hidden cozy-shadow-lg">
+                    <div class="absolute -right-10 -bottom-10 opacity-10 text-white">
+                        <i class="fa-brands fa-pinterest text-[280px]"></i>
+                    </div>
+
+                    <div class="relative z-10 max-w-2xl">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/20 rounded-full text-xs font-semibold mb-4 backdrop-blur-sm">
+                            <i class="fa-brands fa-pinterest"></i> Follow Us On Pinterest
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-serif font-bold mb-4">Find More Crochet Inspiration</h2>
+                        <p class="text-white/90 text-sm sm:text-base mb-8 leading-relaxed">
+                            Love crochet? Follow <span class="font-semibold underline">The Yarn Loop Collective</span> on Pinterest for daily new pattern releases, color palette ideas, stitch tutorials, and cozy maker pins!
+                        </p>
+
+                        <!-- REPLACE THIS PINTEREST LINK WITH YOUR OWN -->
+                        <a href="https://pinterest.com" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 bg-white text-terracotta-dark font-bold rounded-2xl shadow-md hover:bg-cream transition-all transform hover:-translate-y-0.5">
+                            <i class="fa-brands fa-pinterest text-xl"></i>
+                            <span>Follow The Yarn Loop on Pinterest</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEWSLETTER SECTION -->
+            <div class="bg-beige/30 py-16 border-t border-beige">
+                <div class="max-w-3xl mx-auto px-4 text-center">
+                    <div class="w-12 h-12 bg-terracotta/10 text-terracotta rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-regular fa-envelope text-xl"></i>
+                    </div>
+                    <h2 class="text-3xl font-serif font-bold text-yarnText mb-2">Get Free Crochet Inspiration</h2>
+                    <p class="text-brown text-sm sm:text-base mb-8">Join our maker community for free PDF pattern drops, exclusive promo codes, and cozy tutorial updates.</p>
+
+                    <form onsubmit="handleNewsletterSubmit(event)" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                        <input type="email" required placeholder="Enter your email address..." class="flex-grow px-5 py-3.5 rounded-2xl border border-beige-dark/60 bg-cream text-yarnText focus:outline-none focus:ring-2 focus:ring-terracotta/50 text-sm">
+                        <button type="submit" class="px-7 py-3.5 bg-terracotta hover:bg-terracotta-dark text-white font-semibold rounded-2xl shadow-md transition-colors text-sm whitespace-nowrap">
+                            Subscribe Free
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- VIEW 2: SHOP PAGE PAGE -->
+        <!-- ========================================== -->
+        <section id="view-shop" class="page-view hidden py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-10">
+                    <h1 class="text-3xl sm:text-5xl font-serif font-bold text-yarnText mb-4">All Digital Crochet PDF Patterns</h1>
+                    <p class="text-brown text-sm sm:text-base mb-8">Instantly downloadable digital guides with step-by-step photos, stitch diagrams, and beginner instructions.</p>
+                    
+                    <!-- Search Input -->
+                    <div class="relative max-w-xl mx-auto">
+                        <input type="text" id="searchInput" oninput="applyFilters()" placeholder="Search patterns (e.g. daisy bag, beanie, coasters, amigurumi)..." class="w-full pl-12 pr-4 py-4 rounded-2xl bg-cream border border-beige-dark/60 text-yarnText placeholder:text-brown/50 focus:outline-none focus:ring-2 focus:ring-terracotta shadow-sm text-sm">
+                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-brown/60 text-base"></i>
+                    </div>
+                </div>
+
+                <!-- Filters & Controls Bar -->
+                <div class="bg-cream border border-beige rounded-2xl p-4 sm:p-6 mb-10 cozy-shadow">
+                    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                        
+                        <!-- Category Pills -->
+                        <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2 lg:pb-0">
+                            <span class="text-xs font-semibold uppercase text-brown/70 whitespace-nowrap mr-1">Category:</span>
+                            <button data-category="All" onclick="setCategoryFilter('All')" class="cat-pill active px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-terracotta text-white transition-all">All</button>
+                            <button data-category="Bags" onclick="setCategoryFilter('Bags')" class="cat-pill px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-beige/60 text-yarnText hover:bg-beige transition-all">Bags</button>
+                            <button data-category="Amigurumi" onclick="setCategoryFilter('Amigurumi')" class="cat-pill px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-beige/60 text-yarnText hover:bg-beige transition-all">Amigurumi</button>
+                            <button data-category="Home Decor" onclick="setCategoryFilter('Home Decor')" class="cat-pill px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-beige/60 text-yarnText hover:bg-beige transition-all">Home Decor</button>
+                            <button data-category="Clothing & Accessories" onclick="setCategoryFilter('Clothing & Accessories')" class="cat-pill px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-beige/60 text-yarnText hover:bg-beige transition-all">Wearables</button>
+                        </div>
+
+                        <!-- Dropdown filters -->
+                        <div class="flex items-center gap-3">
+                            <div class="flex items-center gap-2 flex-grow sm:flex-grow-0">
+                                <label class="text-xs font-semibold text-brown whitespace-nowrap">Skill:</label>
+                                <select id="difficultySelect" onchange="applyFilters()" class="px-3 py-2 rounded-xl border border-beige-dark/50 bg-cream text-xs text-yarnText focus:outline-none focus:ring-1 focus:ring-terracotta">
+                                    <option value="All">All Levels</option>
+                                    <option value="Beginner">Beginner</option>
+                                    <option value="Easy">Easy</option>
+                                    <option value="Intermediate">Intermediate</option>
+                                </select>
+                            </div>
+
+                            <div class="flex items-center gap-2 flex-grow sm:flex-grow-0">
+                                <label class="text-xs font-semibold text-brown whitespace-nowrap">Sort:</label>
+                                <select id="sortSelect" onchange="applyFilters()" class="px-3 py-2 rounded-xl border border-beige-dark/50 bg-cream text-xs text-yarnText focus:outline-none focus:ring-1 focus:ring-terracotta">
+                                    <option value="popular">Most Popular</option>
+                                    <option value="price-low">Price: Low to High</option>
+                                    <option value="price-high">Price: High to Low</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Products Grid -->
+                <div id="shopGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                    <!-- Dynamic rendering -->
+                </div>
+
+                <!-- Empty State -->
+                <div id="noResults" class="hidden text-center py-16">
+                    <div class="w-16 h-16 bg-beige/50 text-brown rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                        <i class="fa-solid fa-face-frown"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-yarnText">No patterns found</h3>
+                    <p class="text-brown text-sm mt-1">Try adjusting your search terms or category filters.</p>
+                    <button onclick="resetShopFilters()" class="mt-4 px-5 py-2.5 bg-terracotta text-white rounded-xl text-xs font-semibold">Reset Filters</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- VIEW 3: DYNAMIC PRODUCT DETAIL PAGE -->
+        <!-- ========================================== -->
+        <section id="view-product" class="page-view hidden py-10 sm:py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Breadcrumbs -->
+                <nav class="flex items-center gap-2 text-xs text-brown mb-8">
+                    <a href="#" onclick="navigateTo('home'); return false;" class="hover:text-terracotta">Home</a>
+                    <span>/</span>
+                    <a href="#" onclick="navigateTo('shop'); return false;" class="hover:text-terracotta">Shop</a>
+                    <span>/</span>
+                    <span id="pdCategory" class="text-yarnText font-medium">Bags</span>
+                </nav>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
+                    
+                    <!-- Multi-Image Gallery Column -->
+                    <div class="lg:col-span-7 space-y-4">
+                        <div class="bg-cream p-4 rounded-3xl border border-beige cozy-shadow relative">
+                            
+                            <!-- Main Active Image Viewer -->
+                            <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-beige/40 relative">
+                                <img id="pdMainImage" src="" alt="Crochet pattern product main photo" class="w-full h-full object-cover transition-all duration-300">
+
+                                <!-- Save Pin CTA for Pinterest Traffic -->
+                                <button onclick="shareOnPinterest()" class="absolute top-4 right-4 bg-terracotta hover:bg-terracotta-dark text-white text-xs font-bold px-3.5 py-2 rounded-full shadow-md flex items-center gap-2 transition-transform transform hover:scale-105 z-10">
+                                    <i class="fa-brands fa-pinterest"></i>
+                                    <span>Save Pin</span>
+                                </button>
+
+                                <div class="absolute bottom-4 left-4 bg-cream/90 backdrop-blur-md px-3 py-1.5 rounded-xl border border-beige text-xs font-semibold text-yarnText flex items-center gap-2">
+                                    <i class="fa-solid fa-file-pdf text-terracotta"></i> Printable PDF Digital File
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Thumbnail Image Gallery Strip -->
+                        <div class="grid grid-cols-4 gap-3" id="pdThumbnailContainer">
+                            <!-- Thumbnails dynamically rendered -->
+                        </div>
+
+                        <!-- Key Highlights Grid -->
+                        <div class="mt-6 grid grid-cols-3 gap-3 text-center">
+                            <div class="bg-cream border border-beige rounded-2xl p-3">
+                                <i class="fa-solid fa-layer-group text-terracotta mb-1 block"></i>
+                                <span class="text-[11px] text-brown block">Format</span>
+                                <span id="pdFormat" class="text-xs font-bold text-yarnText">Digital PDF</span>
+                            </div>
+                            <div class="bg-cream border border-beige rounded-2xl p-3">
+                                <i class="fa-solid fa-gauge text-sage-dark mb-1 block"></i>
+                                <span class="text-[11px] text-brown block">Skill Level</span>
+                                <span id="pdDifficulty" class="text-xs font-bold text-yarnText">Beginner</span>
+                            </div>
+                            <div class="bg-cream border border-beige rounded-2xl p-3">
+                                <i class="fa-solid fa-book text-brown mb-1 block"></i>
+                                <span class="text-[11px] text-brown block">Pattern Length</span>
+                                <span id="pdPages" class="text-xs font-bold text-yarnText">12 Pages</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Details & Information Column -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <span id="pdBestsellerBadge" class="px-2.5 py-0.5 rounded-full bg-terracotta/10 text-terracotta text-[11px] font-bold uppercase tracking-wider">Bestseller</span>
+                                <span class="text-xs text-sage-dark font-semibold"><i class="fa-solid fa-circle-check"></i> Instant Digital Download</span>
+                            </div>
+
+                            <h1 id="pdTitle" class="text-3xl sm:text-4xl font-serif font-bold text-yarnText mb-3">Crochet Daisy Bag Pattern</h1>
+                            
+                            <!-- Star Rating -->
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="flex text-amber-400 text-xs">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <span class="text-xs font-semibold text-yarnText">5.0</span>
+                                <span class="text-xs text-brown">(Verified maker pattern)</span>
+                            </div>
+
+                            <div class="flex items-baseline gap-3 mb-6">
+                                <span id="pdPrice" class="text-3xl font-serif font-bold text-terracotta">$5.99</span>
+                                <span class="text-xs text-brown">Instant PDF access delivered to your inbox.</span>
+                            </div>
+                        </div>
+
+                        <p id="pdDescription" class="text-brown text-sm leading-relaxed border-t border-beige pt-4">
+                            Detailed pattern description...
+                        </p>
+
+                        <!-- Call to Action Buttons -->
+                        <div class="space-y-3 pt-2">
+                            <button onclick="toggleSavedProduct()" id="savePatternBtn" class="w-full py-4 bg-terracotta hover:bg-terracotta-dark text-white font-bold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3 text-base">
+                                <i class="fa-solid fa-heart"></i>
+                                <span id="savePatternBtnText">Save Pattern to Favorites</span>
+                            </button>
+
+                            <button onclick="shareOnPinterest()" class="w-full py-3.5 bg-cream-dark hover:bg-beige text-yarnText font-semibold rounded-2xl border border-beige-dark/60 transition-colors text-sm flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-pinterest text-terracotta"></i>
+                                <span>Save Pin on Pinterest</span>
+                            </button>
+                        </div>
+
+                        <!-- Secure Delivery Messaging -->
+                        <div class="bg-beige/40 rounded-2xl p-4 border border-beige-dark/30 text-xs text-brown space-y-2">
+                            <div class="flex items-center gap-2 font-semibold text-yarnText">
+                                <i class="fa-solid fa-shield-check text-terracotta"></i> 100% Instant Digital Delivery
+                            </div>
+                            <p>You will receive your printable PDF pattern instantly after download request.</p>
+                        </div>
+
+                        <!-- Accordion Information Tabs -->
+                        <div class="border-t border-beige pt-4 space-y-3">
+                            <details class="group bg-cream rounded-2xl border border-beige p-4" open>
+                                <summary class="font-serif font-bold text-yarnText text-sm cursor-pointer flex justify-between items-center list-none">
+                                    <span><i class="fa-solid fa-box-open text-terracotta mr-2"></i> What's Included</span>
+                                    <i class="fa-solid fa-chevron-down text-xs group-open:rotate-180 transition-transform"></i>
+                                </summary>
+                                <ul class="text-xs text-brown mt-3 space-y-1.5 pl-6 list-disc leading-relaxed">
+                                    <li>Printable PDF Digital Download file (US Terminology)</li>
+                                    <li>Detailed row-by-row written instructions</li>
+                                    <li>20+ high-resolution step-by-step assembly photos</li>
+                                    <li>Stitch chart diagrams & video tutorial links</li>
+                                </ul>
+                            </details>
+
+                            <details class="group bg-cream rounded-2xl border border-beige p-4">
+                                <summary class="font-serif font-bold text-yarnText text-sm cursor-pointer flex justify-between items-center list-none">
+                                    <span><i class="fa-solid fa-scissors text-terracotta mr-2"></i> Materials Needed</span>
+                                    <i class="fa-solid fa-chevron-down text-xs group-open:rotate-180 transition-transform"></i>
+                                </summary>
+                                <div id="pdMaterials" class="text-xs text-brown mt-3 leading-relaxed">
+                                    Yarn & hook requirements...
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- "WHAT'S INSIDE THE PDF" VISUAL PREVIEW SECTION -->
+                <div class="mt-20 border-t border-beige pt-16">
+                    <div class="text-center max-w-2xl mx-auto mb-12">
+                        <span class="text-terracotta text-sm font-semibold tracking-wider uppercase">Peek Inside</span>
+                        <h2 class="text-3xl font-serif font-bold text-yarnText mt-1">What's Inside the Digital PDF</h2>
+                        <p class="text-brown text-sm mt-2">Designed cleanly for iPad, tablet, and printable home printer pages.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- PDF Page Preview 1 -->
+                        <div class="bg-cream p-4 rounded-3xl border border-beige text-center cozy-shadow">
+                            <div class="aspect-[3/4] bg-beige/40 rounded-2xl overflow-hidden mb-4 border border-beige-dark/40 relative">
+                                <img id="pdfMockupImg" src="images/daisy-boho-tote-mockup.jpg" alt="PDF pattern cover visual mockup" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="font-serif font-bold text-base text-yarnText">Pattern Cover & Specs</h3>
+                            <p class="text-xs text-brown mt-1">Yarn weight, gauge & dimensions</p>
+                        </div>
+
+                        <!-- PDF Page Preview 2 -->
+                        <div class="bg-cream p-4 rounded-3xl border border-beige text-center cozy-shadow">
+                            <div class="aspect-[3/4] bg-beige/40 rounded-2xl p-4 flex flex-col justify-between mb-4 border border-beige-dark/40 text-left">
+                                <div>
+                                    <div class="w-8 h-2 bg-terracotta/40 rounded mb-2"></div>
+                                    <div class="w-full h-1.5 bg-brown/20 rounded mb-1.5"></div>
+                                    <div class="w-4/5 h-1.5 bg-brown/20 rounded mb-1.5"></div>
+                                    <div class="w-3/4 h-1.5 bg-brown/20 rounded mb-4"></div>
+                                    <div class="grid grid-cols-2 gap-2 my-2">
+                                        <div class="h-12 bg-sage/20 rounded border border-sage/40"></div>
+                                        <div class="h-12 bg-terracotta/20 rounded border border-terracotta/40"></div>
+                                    </div>
+                                </div>
+                                <span class="text-[10px] font-mono text-brown/60">PAGE 04 • STITCH STEPS</span>
+                            </div>
+                            <h3 class="font-serif font-bold text-base text-yarnText">Step-by-Step Photos</h3>
+                            <p class="text-xs text-brown mt-1">20+ detailed photo guides</p>
+                        </div>
+
+                        <!-- PDF Page Preview 3 -->
+                        <div class="bg-cream p-4 rounded-3xl border border-beige text-center cozy-shadow">
+                            <div class="aspect-[3/4] bg-beige/40 rounded-2xl p-4 flex flex-col justify-between mb-4 border border-beige-dark/40 text-left">
+                                <div>
+                                    <div class="w-12 h-2 bg-brown/40 rounded mb-3"></div>
+                                    <div class="p-3 bg-cream rounded-xl border border-beige text-[10px] text-brown font-mono space-y-1">
+                                        <p>Rnd 1: Ch 3, 11 dc in ring...</p>
+                                        <p>Rnd 2: [2 dc in next st] 12x...</p>
+                                        <p>Rnd 3: Join color B...</p>
+                                    </div>
+                                </div>
+                                <span class="text-[10px] font-mono text-brown/60">PAGE 07 • ROW INSTRUCTIONS</span>
+                            </div>
+                            <h3 class="font-serif font-bold text-base text-yarnText">Clear Stitch Counts</h3>
+                            <p class="text-xs text-brown mt-1">Row by row written steps</p>
+                        </div>
+
+                        <!-- PDF Page Preview 4 -->
+                        <div class="bg-cream p-4 rounded-3xl border border-beige text-center cozy-shadow">
+                            <div class="aspect-[3/4] bg-beige/40 rounded-2xl p-4 flex flex-col justify-between mb-4 border border-beige-dark/40 text-left">
+                                <div>
+                                    <div class="w-10 h-2 bg-sage-dark/40 rounded mb-2"></div>
+                                    <div class="w-full h-24 border-2 border-dashed border-brown/30 rounded-xl flex items-center justify-center text-brown/50 text-xs">
+                                        <i class="fa-solid fa-scissors text-xl"></i>
+                                    </div>
+                                </div>
+                                <span class="text-[10px] font-mono text-brown/60">PAGE 10 • ASSEMBLY</span>
+                            </div>
+                            <h3 class="font-serif font-bold text-base text-yarnText">Assembly Diagram</h3>
+                            <p class="text-xs text-brown mt-1">Seamless join instructions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- YOU MIGHT ALSO LIKE (RELATED PRODUCTS ENGINE) -->
+                <div class="mt-20 border-t border-beige pt-16">
+                    <div class="flex items-center justify-between mb-8">
+                        <div>
+                            <span class="text-terracotta text-xs font-semibold uppercase tracking-wider">More to Explore</span>
+                            <h2 class="text-2xl sm:text-3xl font-serif font-bold text-yarnText">You Might Also Like</h2>
+                        </div>
+                        <button onclick="navigateTo('shop')" class="text-xs font-bold text-brown hover:text-terracotta flex items-center gap-1">
+                            <span>View All</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6" id="relatedProductsGrid">
+                        <!-- Dynamic Related Products Rendered Here -->
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- VIEW 4: ABOUT PAGE PAGE -->
+        <!-- ========================================== -->
+        <section id="view-about" class="page-view hidden py-16">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6">
+                <div class="text-center mb-12">
+                    <span class="text-terracotta text-sm font-semibold tracking-wider uppercase">Slow Craft & Creative Joy</span>
+                    <h1 class="text-4xl sm:text-5xl font-serif font-bold text-yarnText mt-2">Welcome to The Yarn Loop Collective</h1>
+                </div>
+
+                <div class="bg-cream rounded-3xl p-8 sm:p-12 border border-beige cozy-shadow space-y-6 text-brown text-base leading-relaxed">
+                    <p class="font-serif text-xl text-yarnText italic text-center border-b border-beige pb-6">
+                        "Creating cozy, modern handmade moments — one loop and stitch at a time."
+                    </p>
+
+                    <p>
+                        <strong>The Yarn Loop Collective</strong> was born out of a simple passion: making crochet relaxing, fun, and accessible for makers of all skill levels. We believe that crocheting shouldn't involve deciphering confusing abbreviations or guessing stitch placements.
+                    </p>
+
+                    <p>
+                        Every single one of our digital PDF crochet patterns is designed with care, testing every row to ensure crystal-clear instructions. From cute plush amigurumi to aesthetic boho tote bags and warm home decor, our goal is to empower you to create pieces you’re proud to keep or gift.
+                    </p>
+
+                    <h2 class="text-2xl font-serif font-bold text-yarnText pt-4">Why Digital PDF Crochet Patterns?</h2>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li><strong>Instant Access:</strong> Download your PDF pattern immediately and start crocheting right now.</li>
+                        <li><strong>Tablet & Printable:</strong> Read smoothly on your iPad or phone, or print cleanly at home.</li>
+                        <li><strong>High-Resolution Step Photos:</strong> Zoom in on detailed stitch photos whenever you need visual clarity.</li>
+                    </ul>
+
+                    <div class="bg-beige/40 p-6 rounded-2xl border border-beige-dark/40 mt-8 text-center">
+                        <h3 class="font-serif font-bold text-lg text-yarnText mb-2">Connect With Our Maker Community</h3>
+                        <p class="text-xs text-brown mb-4">Share your completed projects with us or find daily pattern inspiration on Pinterest!</p>
+                        <div class="flex justify-center gap-4">
+                            <!-- REPLACE THIS PINTEREST URL -->
+                            <a href="https://pinterest.com" target="_blank" class="px-5 py-2.5 bg-terracotta text-white rounded-xl text-xs font-semibold flex items-center gap-2">
+                                <i class="fa-brands fa-pinterest"></i> Follow on Pinterest
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- VIEW 5: CONTACT PAGE PAGE -->
+        <!-- ========================================== -->
+        <section id="view-contact" class="page-view hidden py-16">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6">
+                <div class="text-center mb-10">
+                    <h1 class="text-4xl font-serif font-bold text-yarnText mb-2">We'd Love to Hear From You</h1>
+                    <p class="text-brown text-sm">Have a question about a pattern or need help downloading your PDF?</p>
+                </div>
+
+                <div class="bg-cream rounded-3xl p-8 border border-beige cozy-shadow">
+                    <form onsubmit="handleContactSubmit(event)" class="space-y-5">
+                        <div>
+                            <label class="block text-xs font-semibold text-yarnText mb-1.5">Your Name</label>
+                            <input type="text" required placeholder="Jane Doe" class="w-full px-4 py-3 rounded-xl border border-beige-dark/50 bg-cream text-sm text-yarnText focus:ring-2 focus:ring-terracotta focus:outline-none">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-yarnText mb-1.5">Your Email Address</label>
+                            <input type="email" required placeholder="hello@example.com" class="w-full px-4 py-3 rounded-xl border border-beige-dark/50 bg-cream text-sm text-yarnText focus:ring-2 focus:ring-terracotta focus:outline-none">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-yarnText mb-1.5">Pattern Question</label>
+                            <input type="text" placeholder="e.g. Daisy Boho Bag Pattern Help" class="w-full px-4 py-3 rounded-xl border border-beige-dark/50 bg-cream text-sm text-yarnText focus:ring-2 focus:ring-terracotta focus:outline-none">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-yarnText mb-1.5">Message</label>
+                            <textarea required rows="4" placeholder="How can we help you with your crochet project?" class="w-full px-4 py-3 rounded-xl border border-beige-dark/50 bg-cream text-sm text-yarnText focus:ring-2 focus:ring-terracotta focus:outline-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 bg-terracotta hover:bg-terracotta-dark text-white font-bold rounded-2xl transition-all shadow-md">
+                            Send Message
+                        </button>
+                    </form>
+
+                    <div class="mt-8 pt-6 border-t border-beige text-center">
+                        <p class="text-xs text-brown">Or reach out directly via email:</p>
+                        <!-- REPLACE WITH YOUR BUSINESS EMAIL -->
+                        <a href="mailto:hello@theyarnloopcollective.com" class="font-serif font-bold text-terracotta text-base hover:underline">
+                            hello@theyarnloopcollective.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- SAVED PATTERNS DRAWER -->
+    <div id="cartDrawer" class="fixed inset-0 z-50 pointer-events-none opacity-0 transition-opacity duration-300">
+        <div onclick="toggleCartDrawer(false)" id="cartBackdrop" class="absolute inset-0 bg-yarnText/40 backdrop-blur-sm"></div>
+
+        <div id="cartPanel" class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-cream border-l border-beige shadow-2xl p-6 flex flex-col transform translate-x-full transition-transform duration-300 pointer-events-auto">
+            <div class="flex items-center justify-between pb-4 border-b border-beige">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-heart text-terracotta"></i>
+                    <h2 class="font-serif font-bold text-xl text-yarnText">Saved Patterns</h2>
+                </div>
+                <button onclick="toggleCartDrawer(false)" class="p-2 text-brown hover:text-yarnText">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Saved items list -->
+            <div id="cartItemsList" class="flex-grow overflow-y-auto py-4 space-y-4">
+                <!-- Dynamically rendered -->
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION POPUP -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-yarnText text-white px-5 py-3 rounded-2xl shadow-xl flex items-center gap-3 text-xs font-medium toast-enter transition-all duration-300 pointer-events-none">
+        <i class="fa-solid fa-circle-check text-sage"></i>
+        <span id="toastMsg">Pattern saved!</span>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-cream border-t border-beige mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12">
+                
+                <div class="md:col-span-5 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-terracotta text-white flex items-center justify-center">
+                            <i class="fa-solid fa-arrow-rotate-right text-xs"></i>
+                        </div>
+                        <span class="font-serif text-2xl font-bold text-yarnText">The Yarn Loop Collective</span>
+                    </div>
+                    <p class="text-xs text-brown leading-relaxed max-w-sm">
+                        Cozy, printable digital crochet PDF patterns designed to help you create beautiful handmade pieces with confidence.
+                    </p>
+                    
+                    <!-- Social Links (Pinterest Priority) -->
+                    <div class="flex items-center gap-3 pt-2">
+                        <!-- REPLACE THIS PINTEREST URL -->
+                        <a href="https://pinterest.com" target="_blank" class="w-9 h-9 rounded-full bg-beige/60 hover:bg-terracotta hover:text-white text-yarnText flex items-center justify-center transition-colors" title="Follow on Pinterest">
+                            <i class="fa-brands fa-pinterest text-sm"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" class="w-9 h-9 rounded-full bg-beige/60 hover:bg-terracotta hover:text-white text-yarnText flex items-center justify-center transition-colors">
+                            <i class="fa-brands fa-instagram text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="md:col-span-3 space-y-3">
+                    <h4 class="font-serif font-bold text-sm text-yarnText">Quick Navigation</h4>
+                    <ul class="space-y-2 text-xs text-brown">
+                        <li><a href="#" onclick="navigateTo('home'); return false;" class="hover:text-terracotta">Home</a></li>
+                        <li><a href="#" onclick="navigateTo('shop'); return false;" class="hover:text-terracotta">Shop All Patterns</a></li>
+                        <li><a href="#" onclick="navigateTo('about'); return false;" class="hover:text-terracotta">About Brand</a></li>
+                        <li><a href="#" onclick="navigateTo('contact'); return false;" class="hover:text-terracotta">Contact Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-4 space-y-3">
+                    <h4 class="font-serif font-bold text-sm text-yarnText">Policies & Info</h4>
+                    <ul class="space-y-2 text-xs text-brown">
+                        <li><a href="#" onclick="showPolicy('privacy'); return false;" class="hover:text-terracotta">Privacy Policy Starter</a></li>
+                        <li><a href="#" onclick="showPolicy('refund'); return false;" class="hover:text-terracotta">Digital PDF Delivery Policy</a></li>
+                    </ul>
+                    <p class="text-[11px] text-brown/70 pt-2">
+                        All designs © 2026 The Yarn Loop Collective. Digital PDF patterns are for personal craft use.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="border-t border-beige mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-brown">
+                <p>&copy; 2026 The Yarn Loop Collective. All Rights Reserved.</p>
+                <p class="mt-2 sm:mt-0">Crafted for Pinterest Traffic & Digital Delivery</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT DATABASE & APPLICATION CONTROLLER -->
+    <script>
+        /* =========================================================================
+           IMAGE SYSTEM & AI GENERATION PROMPTS
+           -------------------------------------------------------------------------
+           Below is the central image configuration system.
+           Each product points to image files (e.g., 'images/daisy-boho-tote-main.jpg').
+           High-quality SVG Data URIs serve as default visual fallbacks so images never break!
+
+           AI IMAGE PROMPTS FOR GENERATING YOUR OWN PHOTOS:
+           -------------------------------------------------------------------------
+           1. Daisy Boho Tote Bag:
+              - Main: "Photorealistic handmade crochet tote bag with cream cotton body, yellow and white daisy floral motifs, warm neutral aesthetic background, natural soft sunlight."
+              - Detail: "Close-up of crochet stitches on a cream daisy flower tote bag, textured cotton yarn fibers, detailed craftsmanship."
+              - Lifestyle: "A cozy aesthetic lifestyle photo of a woman holding a handmade crochet daisy tote bag filled with fresh flowers and yarn, boho style."
+              - Mockup: "A clean top-down flatlay mockup of a printed crochet PDF pattern cover next to a beige crochet daisy tote bag, crochet hook, and cream yarn skeins."
+
+           2. Cozy Pumpkin Amigurumi Trio:
+              - Main: "Three cute handmade crochet velvet pumpkins in ribbed autumn orange, sage green, and cream, cozy wooden table background, warm fall atmosphere."
+              - Detail: "Close up detail of velvet crochet pumpkin stitches and cinnamon stick stem, soft depth of field."
+              - Lifestyle: "Autumn living room mantle styled with handmade crochet pumpkins, cozy candles, and autumn leaves."
+
+           3. Minimalist Ribbed Beanie:
+              - Main: "A neatly folded handmade ribbed crochet beanie in soft beige wool yarn, minimalist craft background, soft daylight."
+              - Detail: "Close up macro shot of ribbed crochet beanie texture, soft wool blend fibers."
+
+           4. Floral Square Coaster Set:
+              - Main: "A set of four square handmade crochet coasters with delicate flower centers, laid on a rustic wooden coffee table next to a teacup."
+              - Detail: "Close up of floral crochet coaster square stitch work."
+           ========================================================================= */
+
+        // Helper: Generates realistic SVG data URIs as default image fallbacks
+        function createSvgFallback(title, subtitle, color = "#C87D55", bg = "#EFE7DA") {
+            const svgStr = `
+                <svg width="600" height="750" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="100%" height="100%" fill="${bg}"/>
+                    <circle cx="300" cy="300" r="180" stroke="${color}" stroke-width="4" stroke-dasharray="8 8" fill="#FAF8F5"/>
+                    <path d="M220 300 C 220 220, 380 220, 380 300 C 380 380, 220 380, 220 300 Z" stroke="${color}" stroke-width="8" fill="none"/>
+                    <line x1="180" y1="340" x2="420" y2="260" stroke="#7C6049" stroke-width="8" stroke-linecap="round"/>
+                    <circle cx="420" cy="260" r="10" fill="#7C6049"/>
+                    <text x="300" y="550" font-family="Georgia, serif" font-size="28" font-weight="bold" fill="#332A24" text-anchor="middle">${title}</text>
+                    <text x="300" y="590" font-family="sans-serif" font-size="16" fill="#7C6049" text-anchor="middle">${subtitle}</text>
+                    <text x="300" y="620" font-family="sans-serif" font-size="12" fill="#8A9A86" text-anchor="middle">The Yarn Loop Collective • Digital PDF</text>
+                </svg>
+            `;
+            return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svgStr)}`;
+        }
+
+        /* central image file mapper with automatic fallbacks */
+        const PRODUCT_IMAGES = {
+            daisyTote: {
+                main: "images/daisy-boho-tote-main.jpg",
+                detail: "images/daisy-boho-tote-detail.jpg",
+                lifestyle: "images/daisy-boho-tote-lifestyle.jpg",
+                mockup: "images/daisy-boho-tote-mockup.jpg",
+                fallbacks: {
+                    main: createSvgFallback("Daisy Boho Tote", "Handmade Crochet Pattern", "#C87D55"),
+                    detail: createSvgFallback("Daisy Stitch Detail", "Close-up Granny Square", "#C87D55"),
+                    lifestyle: createSvgFallback("Daisy Tote Lifestyle", "Weekend Maker Craft", "#8A9A86"),
+                    mockup: createSvgFallback("PDF Pattern Cover", "Printable Digital Guide", "#7C6049")
+                }
+            },
+            pumpkins: {
+                main: "images/cozy-pumpkin-trio-main.jpg",
+                detail: "images/cozy-pumpkin-trio-detail.jpg",
+                lifestyle: "images/cozy-pumpkin-trio-lifestyle.jpg",
+                mockup: "images/cozy-pumpkin-trio-mockup.jpg",
+                fallbacks: {
+                    main: createSvgFallback("Cozy Pumpkin Trio", "Velvet Autumn Amigurumi", "#C87D55"),
+                    detail: createSvgFallback("Ribbed Velvet Texture", "Stem & Stitch Detail", "#7C6049"),
+                    lifestyle: createSvgFallback("Autumn Decor", "Mantle & Home Styling", "#8A9A86"),
+                    mockup: createSvgFallback("PDF Pattern Cover", "3 Size Pumpkin Guide", "#C87D55")
+                }
+            },
+            beanie: {
+                main: "images/ribbed-beanie-main.jpg",
+                detail: "images/ribbed-beanie-detail.jpg",
+                lifestyle: "images/ribbed-beanie-lifestyle.jpg",
+                mockup: "images/ribbed-beanie-mockup.jpg",
+                fallbacks: {
+                    main: createSvgFallback("Minimalist Ribbed Beanie", "Cozy Folded Brim Hat", "#7C6049"),
+                    detail: createSvgFallback("Ribbed Stitch Detail", "Wool Blend Fibers", "#8A9A86"),
+                    lifestyle: createSvgFallback("Beanie Wearable", "Winter Lifestyle Photo", "#C87D55"),
+                    mockup: createSvgFallback("PDF Pattern Cover", "Seamless Beanie Guide", "#7C6049")
+                }
+            },
+            coasters: {
+                main: "images/floral-coasters-main.jpg",
+                detail: "images/floral-coasters-detail.jpg",
+                lifestyle: "images/floral-coasters-lifestyle.jpg",
+                mockup: "images/floral-coasters-mockup.jpg",
+                fallbacks: {
+                    main: createSvgFallback("Floral Square Coasters", "30-Min Stash Buster", "#8A9A86"),
+                    detail: createSvgFallback("Flower Square Detail", "Cotton Yarn Stitches", "#C87D55"),
+                    lifestyle: createSvgFallback("Coffee Table Styling", "Handmade Gift Set", "#7C6049"),
+                    mockup: createSvgFallback("PDF Pattern Cover", "Coaster Set PDF Guide", "#8A9A86")
+                }
+            }
+        };
+
+        // Automatic image loader that smoothly applies fallback if external image file is missing
+        function applyImageWithFallback(imgElementId, primarySrc, fallbackSrc, altText = "") {
+            const imgEl = document.getElementById(imgElementId);
+            if (!imgEl) return;
+            
+            if (altText) imgEl.alt = altText;
+            
+            const tempImg = new Image();
+            tempImg.src = primarySrc;
+            tempImg.onload = () => { imgEl.src = primarySrc; };
+            tempImg.onerror = () => { imgEl.src = fallbackSrc; };
+        }
+
+        /* =========================================================================
+           PRODUCT DATABASE
+           ========================================================================= */
+        const PRODUCT_DATA = [
+            {
+                id: 1,
+                name: "Daisy Boho Tote Bag Pattern",
+                slug: "daisy-boho-tote-bag-pattern",
+                category: "Bags",
+                price: 5.99,
+                difficulty: "Beginner",
+                pages: 12,
+                estimatedTime: "4-6 Hours",
+                materials: "4.5mm Hook, Worsted Weight Cotton Yarn (Cream, Daisy Yellow, Sage Green)",
+                bestseller: true,
+                imagesKey: "daisyTote",
+                description: "Create your own dreamy boho daisy tote bag! This digital PDF pattern features easy granny square motifs joined seamlessly into a sturdy market tote. Includes detailed photo guides for lining and handles.",
+                altText: "Handmade crochet daisy tote bag in cream and soft yellow",
+                reviews: [
+                    { name: "Sarah M.", rating: 5, comment: "Super easy to follow! The photo guide made joining granny squares painless." },
+                    { name: "Chloe T.", rating: 5, comment: "I made this over the weekend. Already got so many compliments on Pinterest!" }
+                ]
+            },
+            {
+                id: 2,
+                name: "Cozy Pumpkin Amigurumi Trio",
+                slug: "cozy-pumpkin-amigurumi-trio",
+                category: "Amigurumi",
+                price: 4.99,
+                difficulty: "Beginner",
+                pages: 8,
+                estimatedTime: "2-3 Hours",
+                materials: "3.5mm Hook, Velvet/Chenille Yarn (Terracotta, Sage, Cream), Cinnamon Sticks",
+                bestseller: true,
+                imagesKey: "pumpkins",
+                description: "A cute trio of plush velvet autumn pumpkins in three sizes. A relaxing fall home decor project that works up fast using basic stitches!",
+                altText: "Trio of plush velvet crochet pumpkins on a wooden table",
+                reviews: [
+                    { name: "Emma R.", rating: 5, comment: "Works up so fast! Perfect for autumn gifts." }
+                ]
+            },
+            {
+                id: 3,
+                name: "Minimalist Ribbed Beanie",
+                slug: "minimalist-ribbed-beanie",
+                category: "Clothing & Accessories",
+                price: 4.49,
+                difficulty: "Beginner",
+                pages: 6,
+                estimatedTime: "3-4 Hours",
+                materials: "5.0mm Hook, Chunky Wool Blend Yarn",
+                bestseller: false,
+                imagesKey: "beanie",
+                description: "A cozy modern ribbed beanie with a folded brim. Achieves a knit-look texture using beginner-friendly crochet stitches. Great winter wardrobe staple!",
+                altText: "Folded beige ribbed crochet beanie hat",
+                reviews: [
+                    { name: "Alex P.", rating: 5, comment: "Great basic beanie pattern! Clear stitch count notes." }
+                ]
+            },
+            {
+    id: 4,
+    name: "Floral Square Coaster Set",
+    slug: "floral-square-coaster-set",
+    category: "Home Decor",
+    price: 3.99,
+    difficulty: "Easy",
+    pages: 7,
+    estimatedTime: "1-2 Hours",
+    materials: "3.75mm Hook, 100% Cotton Yarn",
+    bestseller: false,
+    imagesKey: "coasters",
+    description: "Add handmade warmth to your coffee table! Fast 30-minute floral square coasters ideal for gift baskets.",
+    altText: "Handmade floral crochet coasters on coffee table",
+    reviews: [
+        { name: "Jessica W.", rating: 5, comment: "Loved making these for gift baskets!" }
+    ]
+}
+        ];
+
+        /* APP STATE */
+        let savedPatterns = [];
+        let currentView = 'home';
+        let selectedProduct = PRODUCT_DATA[0];
+        let currentCatFilter = 'All';
+
+        /* INITIALIZATION */
+        window.addEventListener('DOMContentLoaded', () => {
+            try {
+                const stored = JSON.parse(localStorage.getItem('yarnLoopSavedPatterns') || '[]');
+                savedPatterns = Array.isArray(stored)
+                    ? stored.map(Number).filter(id => PRODUCT_DATA.some(p => p.id === id))
+                    : [];
+            } catch {
+                savedPatterns = [];
+            }
+
+            initializeImages();
+            renderFeaturedProducts();
+            renderShopGrid(PRODUCT_DATA);
+            updateCartUI();
+            navigateFromUrl(false);
+        });
+
+        window.addEventListener('popstate', () => navigateFromUrl(false));
+
+        function saveFavorites() {
+            localStorage.setItem('yarnLoopSavedPatterns', JSON.stringify(savedPatterns));
+        }
+
+        function navigateFromUrl(scroll = true) {
+            const hash = window.location.hash.replace(/^#/, '');
+            if (hash.startsWith('product-')) {
+                const id = Number(hash.slice('product-'.length));
+                navigateTo('product', Number.isFinite(id) ? id : 1, false, scroll);
+                return;
+            }
+            const validViews = ['home', 'shop', 'about', 'contact'];
+            const view = validViews.includes(hash) ? hash : 'home';
+            navigateTo(view, null, false, scroll);
+        }
+
+        function initializeImages() {
+            // Apply image fallbacks smoothly across categories & inspiration sections
+            applyImageWithFallback('heroImageElement', PRODUCT_IMAGES.daisyTote.main, PRODUCT_IMAGES.daisyTote.fallbacks.main, "Daisy Boho Tote Pattern");
+            applyImageWithFallback('catImgBags', PRODUCT_IMAGES.daisyTote.main, PRODUCT_IMAGES.daisyTote.fallbacks.main);
+            applyImageWithFallback('catImgAmigurumi', PRODUCT_IMAGES.pumpkins.main, PRODUCT_IMAGES.pumpkins.fallbacks.main);
+            applyImageWithFallback('catImgClothing', PRODUCT_IMAGES.beanie.main, PRODUCT_IMAGES.beanie.fallbacks.main);
+            applyImageWithFallback('catImgHome', PRODUCT_IMAGES.coasters.main, PRODUCT_IMAGES.coasters.fallbacks.main);
+
+            applyImageWithFallback('inspImg1', PRODUCT_IMAGES.daisyTote.lifestyle, PRODUCT_IMAGES.daisyTote.fallbacks.lifestyle);
+            applyImageWithFallback('inspImg2', PRODUCT_IMAGES.pumpkins.lifestyle, PRODUCT_IMAGES.pumpkins.fallbacks.lifestyle);
+            applyImageWithFallback('inspImg3', PRODUCT_IMAGES.coasters.lifestyle, PRODUCT_IMAGES.coasters.fallbacks.lifestyle);
+        }
+
+        /* ROUTER & VIEW SWITCHING */
+        function navigateTo(viewId, productId = null, updateUrl = true, scroll = true) {
+            if (viewId === 'product') {
+                selectedProduct = PRODUCT_DATA.find(p => p.id === Number(productId)) || PRODUCT_DATA[0];
+            }
+
+            currentView = viewId;
+            document.querySelectorAll('.page-view').forEach(view => view.classList.add('hidden'));
+
+            const target = document.getElementById(`view-${viewId}`);
+            if (!target) return;
+            target.classList.remove('hidden');
+
+            if (updateUrl) {
+                const hash = viewId === 'product' ? `product-${selectedProduct.id}` : viewId;
+                history.pushState({ viewId, productId: viewId === 'product' ? selectedProduct.id : null }, '', `#${hash}`);
+            }
+
+            if (scroll) window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('text-terracotta', 'border-terracotta');
+            });
+            const activeNav = document.getElementById(`nav-${viewId}`);
+            if (activeNav) activeNav.classList.add('text-terracotta', 'border-terracotta');
+
+            if (viewId === 'product') renderProductDetailPage(selectedProduct);
+        }
+
+        /* RENDER FEATURED PRODUCTS ON HOMEPAGE */
+        function renderFeaturedProducts() {
+            const container = document.getElementById('featuredProductsContainer');
+            container.innerHTML = PRODUCT_DATA.map(product => {
+                const imgGroup = PRODUCT_IMAGES[product.imagesKey];
+                const fallbackUrl = imgGroup ? imgGroup.fallbacks.main : '';
+                const mainUrl = imgGroup ? imgGroup.main : '';
+
+                return `
+                <div class="bg-cream rounded-3xl p-4 border border-beige/80 cozy-shadow hover:cozy-shadow-lg transition-all group duration-300 flex flex-col justify-between">
+                    <div>
+                        <div onclick="navigateTo('product', ${product.id})" class="aspect-[4/5] rounded-2xl overflow-hidden bg-beige/40 cursor-pointer relative mb-4">
+                            <img src="${mainUrl}" onerror="this.src='${fallbackUrl}'" alt="${product.altText}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            ${product.bestseller ? `<span class="absolute top-3 left-3 bg-terracotta text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Bestseller</span>` : ''}
+                            <span class="absolute bottom-3 right-3 bg-cream/95 text-yarnText text-xs font-serif font-bold px-3 py-1 rounded-xl shadow-sm">$${product.price.toFixed(2)}</span>
+                        </div>
+                        
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-[11px] font-semibold text-sage-dark uppercase tracking-wider">${product.category}</span>
+                            <span class="text-[10px] text-brown">• ${product.difficulty}</span>
+                        </div>
+
+                        <h3 onclick="navigateTo('product', ${product.id})" class="font-serif font-bold text-base text-yarnText hover:text-terracotta cursor-pointer transition-colors line-clamp-1">
+                            ${product.name}
+                        </h3>
+                        <p class="text-xs text-brown mt-1 line-clamp-2 leading-relaxed">${product.description}</p>
+                    </div>
+
+                    <div class="pt-4 mt-4 border-t border-beige flex items-center gap-2">
+                        <button onclick="navigateTo('product', ${product.id})" class="flex-grow py-2.5 bg-cream-dark hover:bg-terracotta hover:text-white text-yarnText text-xs font-semibold rounded-xl transition-all text-center">
+                            View Pattern Details
+                        </button>
+                    </div>
+                </div>
+            `;
+            }).join('');
+        }
+
+        /* RENDER SHOP PAGE GRID WITH FILTERS */
+        function renderShopGrid(items) {
+            const grid = document.getElementById('shopGrid');
+            const noResults = document.getElementById('noResults');
+
+            if (items.length === 0) {
+                grid.innerHTML = '';
+                noResults.classList.remove('hidden');
+                return;
+            }
+
+            noResults.classList.add('hidden');
+            grid.innerHTML = items.map(product => {
+                const imgGroup = PRODUCT_IMAGES[product.imagesKey];
+                const fallbackUrl = imgGroup ? imgGroup.fallbacks.main : '';
+                const mainUrl = imgGroup ? imgGroup.main : '';
+
+                return `
+                <div class="bg-cream rounded-3xl p-4 border border-beige/80 cozy-shadow hover:cozy-shadow-lg transition-all group duration-300 flex flex-col justify-between">
+                    <div>
+                        <div onclick="navigateTo('product', ${product.id})" class="aspect-[4/5] rounded-2xl overflow-hidden bg-beige/40 cursor-pointer relative mb-4">
+                            <img src="${mainUrl}" onerror="this.src='${fallbackUrl}'" alt="${product.altText}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            ${product.bestseller ? `<span class="absolute top-3 left-3 bg-terracotta text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Bestseller</span>` : ''}
+                            <span class="absolute bottom-3 right-3 bg-cream/95 text-yarnText text-xs font-serif font-bold px-3 py-1 rounded-xl shadow-sm">$${product.price.toFixed(2)}</span>
+                        </div>
+
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-[11px] font-semibold text-sage-dark uppercase tracking-wider">${product.category}</span>
+                            <span class="text-[10px] text-brown">• ${product.difficulty}</span>
+                        </div>
+
+                        <h3 onclick="navigateTo('product', ${product.id})" class="font-serif font-bold text-base text-yarnText hover:text-terracotta cursor-pointer transition-colors line-clamp-1">
+                            ${product.name}
+                        </h3>
+                        <p class="text-xs text-brown mt-1 line-clamp-2 leading-relaxed">${product.description}</p>
+                    </div>
+
+                    <div class="pt-4 mt-4 border-t border-beige flex items-center gap-2">
+                        <button onclick="navigateTo('product', ${product.id})" class="flex-grow py-2.5 bg-cream-dark hover:bg-terracotta hover:text-white text-yarnText text-xs font-semibold rounded-xl transition-all">
+                            View Pattern Details
+                        </button>
+                    </div>
+                </div>
+            `;
+            }).join('');
+        }
+
+        /* FILTER & SEARCH LOGIC */
+        function applyFilters() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const difficulty = document.getElementById('difficultySelect').value;
+            const sort = document.getElementById('sortSelect').value;
+
+            let filtered = PRODUCT_DATA.filter(p => {
+                const matchesCat = currentCatFilter === 'All' || p.category === currentCatFilter;
+                const matchesQuery = p.name.toLowerCase().includes(query) || p.description.toLowerCase().includes(query);
+                const matchesDiff = difficulty === 'All' || p.difficulty === difficulty;
+                return matchesCat && matchesQuery && matchesDiff;
+            });
+
+            if (sort === 'price-low') filtered.sort((a,b) => a.price - b.price);
+            if (sort === 'price-high') filtered.sort((a,b) => b.price - a.price);
+            if (sort === 'popular') {
+                filtered.sort((a, b) => {
+                    const scoreA = (a.bestseller ? 100 : 0) + (a.reviews?.length || 0);
+                    const scoreB = (b.bestseller ? 100 : 0) + (b.reviews?.length || 0);
+                    return scoreB - scoreA;
+                });
+            }
+
+            renderShopGrid(filtered);
+        }
+
+        function setCategoryFilter(category) {
+            currentCatFilter = category;
+            document.querySelectorAll('.cat-pill').forEach(btn => {
+                const isActive = btn.dataset.category === category;
+                btn.classList.toggle('bg-terracotta', isActive);
+                btn.classList.toggle('text-white', isActive);
+                btn.classList.toggle('bg-beige/60', !isActive);
+                btn.classList.toggle('text-yarnText', !isActive);
+            });
+            applyFilters();
+        }
+
+        function filterByCategory(category) {
+            navigateTo('shop');
+            setTimeout(() => {
+                setCategoryFilter(category);
+            }, 100);
+        }
+
+        function filterByDifficulty(difficulty) {
+            navigateTo('shop');
+            setTimeout(() => {
+                document.getElementById('difficultySelect').value = difficulty;
+                applyFilters();
+            }, 100);
+        }
+
+        function resetShopFilters() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('difficultySelect').value = 'All';
+            setCategoryFilter('All');
+        }
+
+        function focusSearch() {
+            setTimeout(() => {
+                const searchEl = document.getElementById('searchInput');
+                if(searchEl) searchEl.focus();
+            }, 100);
+        }
+
+        /* RENDER DYNAMIC PRODUCT DETAIL PAGE WITH MULTI-IMAGE GALLERY */
+        function renderProductDetailPage(p) {
+            document.getElementById('pdCategory').innerText = p.category;
+            document.getElementById('pdTitle').innerText = p.name;
+            document.getElementById('pdPrice').innerText = `$${p.price.toFixed(2)}`;
+            document.getElementById('pdDifficulty').innerText = p.difficulty;
+            document.getElementById('pdPages').innerText = `${p.pages} Pages`;
+            document.getElementById('pdDescription').innerText = p.description;
+            document.getElementById('pdMaterials').innerText = p.materials;
+
+            const badge = document.getElementById('pdBestsellerBadge');
+            if (p.bestseller) {
+                badge.classList.remove('hidden');
+            } else {
+                badge.classList.add('hidden');
+            }
+
+            // Load Image Group
+            const imgGroup = PRODUCT_IMAGES[p.imagesKey] || PRODUCT_IMAGES.daisyTote;
+
+            // Apply Main Image
+            applyImageWithFallback('pdMainImage', imgGroup.main, imgGroup.fallbacks.main, p.altText);
+            applyImageWithFallback('pdfMockupImg', imgGroup.mockup, imgGroup.fallbacks.mockup, `${p.name} PDF Mockup Cover`);
+
+            // Build Multi-Image Thumbnail Gallery
+            const thumbContainer = document.getElementById('pdThumbnailContainer');
+            const gallerySlots = [
+                { type: 'main', src: imgGroup.main, fallback: imgGroup.fallbacks.main, label: 'Main Photo' },
+                { type: 'detail', src: imgGroup.detail, fallback: imgGroup.fallbacks.detail, label: 'Stitch Detail' },
+                { type: 'lifestyle', src: imgGroup.lifestyle, fallback: imgGroup.fallbacks.lifestyle, label: 'Lifestyle Photo' },
+                { type: 'mockup', src: imgGroup.mockup, fallback: imgGroup.fallbacks.mockup, label: 'PDF Pattern Mockup' }
+            ];
+
+            thumbContainer.innerHTML = gallerySlots.map((slot, index) => `
+                <div onclick="switchProductMainImage('${slot.src}', '${slot.fallback}', this)" class="aspect-square rounded-xl overflow-hidden border-2 border-beige cursor-pointer transition-all opacity-70 hover:opacity-100 ${index === 0 ? 'thumb-active' : ''}">
+                    <img src="${slot.src}" onerror="this.src='${slot.fallback}'" alt="${p.name} ${slot.label}" class="w-full h-full object-cover">
+                </div>
+            `).join('');
+
+            // Render Related Products engine
+            renderRelatedProducts(p);
+
+            // Update Save Button State
+            updateSaveButtonState(p.id);
+        }
+
+        function switchProductMainImage(primarySrc, fallbackSrc, thumbEl) {
+            document.querySelectorAll('#pdThumbnailContainer div').forEach(el => el.classList.remove('thumb-active'));
+            if(thumbEl) thumbEl.classList.add('thumb-active');
+            applyImageWithFallback('pdMainImage', primarySrc, fallbackSrc);
+        }
+
+        /* RENDER RELATED PRODUCTS ENGINE */
+        function renderRelatedProducts(currentProduct) {
+            const container = document.getElementById('relatedProductsGrid');
+            const related = PRODUCT_DATA.filter(item => item.id !== currentProduct.id).slice(0, 3);
+
+            container.innerHTML = related.map(product => {
+                const imgGroup = PRODUCT_IMAGES[product.imagesKey];
+                const fallbackUrl = imgGroup ? imgGroup.fallbacks.main : '';
+                const mainUrl = imgGroup ? imgGroup.main : '';
+
+                return `
+                <div class="bg-cream rounded-3xl p-4 border border-beige/80 cozy-shadow hover:cozy-shadow-lg transition-all group flex flex-col justify-between">
+                    <div>
+                        <div onclick="navigateTo('product', ${product.id})" class="aspect-[4/5] rounded-2xl overflow-hidden bg-beige/40 cursor-pointer relative mb-3">
+                            <img src="${mainUrl}" onerror="this.src='${fallbackUrl}'" alt="${product.altText}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute bottom-3 right-3 bg-cream/95 text-yarnText text-xs font-serif font-bold px-2.5 py-1 rounded-xl shadow-sm">$${product.price.toFixed(2)}</span>
+                        </div>
+                        <h4 onclick="navigateTo('product', ${product.id})" class="font-serif font-bold text-sm text-yarnText hover:text-terracotta cursor-pointer line-clamp-1">
+                            ${product.name}
+                        </h4>
+                        <p class="text-[11px] text-brown mt-0.5">${product.category} • ${product.difficulty}</p>
+                    </div>
+                </div>
+            `;
+            }).join('');
+        }
+
+        /* SAVED FAVORITE PATTERNS MANAGEMENT */
+        function toggleSavedProduct() {
+            const index = savedPatterns.indexOf(selectedProduct.id);
+            if (index > -1) {
+                savedPatterns.splice(index, 1);
+                showToast(`Removed "${selectedProduct.name}" from saved list.`);
+            } else {
+                savedPatterns.push(selectedProduct.id);
+                showToast(`Saved "${selectedProduct.name}" to your favorites!`);
+            }
+            saveFavorites();
+            updateCartUI();
+            updateSaveButtonState(selectedProduct.id);
+        }
+
+        function updateSaveButtonState(id) {
+            const isSaved = savedPatterns.includes(id);
+            const btn = document.getElementById('savePatternBtn');
+            const btnText = document.getElementById('savePatternBtnText');
+
+            if (isSaved) {
+                btn.classList.remove('bg-terracotta', 'hover:bg-terracotta-dark');
+                btn.classList.add('bg-sage-dark', 'hover:bg-sage');
+                btnText.innerText = "Pattern Saved to Favorites";
+            } else {
+                btn.classList.remove('bg-sage-dark', 'hover:bg-sage');
+                btn.classList.add('bg-terracotta', 'hover:bg-terracotta-dark');
+                btnText.innerText = "Save Pattern to Favorites";
+            }
+        }
+
+        function updateCartUI() {
+            const badge = document.getElementById('cartBadge');
+            const list = document.getElementById('cartItemsList');
+
+            badge.innerText = savedPatterns.length;
+            if (savedPatterns.length > 0) {
+                badge.classList.remove('scale-0');
+            } else {
+                badge.classList.add('scale-0');
+            }
+
+            if (savedPatterns.length === 0) {
+                list.innerHTML = `
+                    <div class="text-center py-12 text-brown">
+                        <i class="fa-solid fa-heart text-3xl mb-2 opacity-30"></i>
+                        <p class="text-xs">No saved patterns yet.</p>
+                        <button onclick="toggleCartDrawer(false); navigateTo('shop');" class="mt-4 px-4 py-2 bg-terracotta text-white rounded-xl text-xs font-semibold">Browse Shop</button>
+                    </div>
+                `;
+                return;
+            }
+
+            const items = PRODUCT_DATA.filter(p => savedPatterns.includes(p.id));
+            list.innerHTML = items.map(item => {
+                const imgGroup = PRODUCT_IMAGES[item.imagesKey];
+                const mainUrl = imgGroup ? imgGroup.main : '';
+                const fallbackUrl = imgGroup ? imgGroup.fallbacks.main : '';
+
+                return `
+                    <div class="flex items-center justify-between bg-beige/30 p-3 rounded-2xl border border-beige-dark/30">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-xl bg-beige overflow-hidden">
+                                <img src="${mainUrl}" onerror="this.src='${fallbackUrl}'" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 onclick="navigateTo('product', ${item.id}); toggleCartDrawer(false);" class="font-serif font-bold text-xs text-yarnText line-clamp-1 cursor-pointer hover:text-terracotta">${item.name}</h4>
+                                <span class="text-[11px] text-terracotta font-semibold">$${item.price.toFixed(2)} PDF</span>
+                            </div>
+                        </div>
+                        <button onclick="toggleSavedProductById(${item.id})" class="text-brown/60 hover:text-terracotta p-1">
+                            <i class="fa-solid fa-trash text-xs"></i>
+                        </button>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function toggleSavedProductById(id) {
+            const index = savedPatterns.indexOf(id);
+            if (index > -1) savedPatterns.splice(index, 1);
+            saveFavorites();
+            updateCartUI();
+            if (selectedProduct.id === id) updateSaveButtonState(id);
+        }
+
+        /* DRAWER & NAVIGATION TOGGLES */
+        function toggleCartDrawer(open) {
+            const drawer = document.getElementById('cartDrawer');
+            const panel = document.getElementById('cartPanel');
+            if (open) {
+                drawer.classList.remove('pointer-events-none', 'opacity-0');
+                panel.classList.remove('translate-x-full');
+            } else {
+                drawer.classList.add('pointer-events-none', 'opacity-0');
+                panel.classList.add('translate-x-full');
+            }
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMsg').innerText = msg;
+            toast.classList.remove('toast-enter');
+            toast.classList.add('toast-show');
+            setTimeout(() => {
+                toast.classList.remove('toast-show');
+                toast.classList.add('toast-enter');
+            }, 2500);
+        }
+
+        function scrollToCategory() {
+            const catSection = document.getElementById('categories-section');
+            if (catSection) catSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function handleNewsletterSubmit(e) {
+            e.preventDefault();
+            showToast("Thank you for joining our crochet newsletter!");
+            e.target.reset();
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            showToast("Thank you! Your message has been sent.");
+            e.target.reset();
+        }
+
+        function shareOnPinterest() {
+            const productUrl = `${window.location.origin}${window.location.pathname}#product-${selectedProduct.id}`;
+            const url = encodeURIComponent(productUrl);
+            const description = encodeURIComponent(`Digital PDF Crochet Pattern: ${selectedProduct.name} - The Yarn Loop Collective`);
+            window.open(`https://pinterest.com/pin/create/button/?url=${url}&description=${description}`, '_blank', 'noopener,noreferrer');
+        }
+
+        function showPolicy(type) {
+            let message = "";
+            if (type === 'privacy') message = "PRIVACY POLICY: We value your privacy. No personal maker data is sold or shared.";
+            if (type === 'refund') message = "DIGITAL PDF DELIVERY POLICY: Patterns are instant digital PDF downloads.";
+            alert(message);
+        }
+    </script>
+</body>
+</html>
